@@ -1,0 +1,34 @@
+{
+  "name": "yellows-hotdog-jackpot",
+  "version": "1.0.0",
+  "description": "QR code marketing campaign web app for Yellows Hotdog Shop",
+  "main": "backend-example.js",
+  "scripts": {
+    "start": "node backend-example.js",
+    "dev": "nodemon backend-example.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "marketing",
+    "qr-code",
+    "gamification",
+    "spin-to-win",
+    "yellows",
+    "hotdog"
+  ],
+  "author": "Yellows",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "nodemailer": "^6.9.7",
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

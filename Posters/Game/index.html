@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD700">
+    <title>Yellows Hotdog Jackpot - Spin & Win!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Screen -->
+    <div id="landing-screen" class="screen active">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">YELLOWS</div>
+                <div class="mascot">🌭</div>
+            </div>
+
+            <h1 class="headline">Spin the Yellows Hotdog Jackpot!</h1>
+            <p class="subtext">Win instant free toppings, discounts & secret prizes.</p>
+            <p class="info-text">Enter your name and email to play & save your prize.</p>
+
+            <form id="entry-form" class="entry-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="btn-primary pulse">🎰 Play & Spin</button>
+            </form>
+
+            <p class="privacy-note">We'll email you your prize code. No spam, we promise!</p>
+        </div>
+    </div>
+
+    <!-- Spin Wheel Screen -->
+    <div id="spin-screen" class="screen">
+        <div class="container">
+            <div class="logo-small">YELLOWS 🌭</div>
+            <h2 class="spin-title">Ready to Win, <span id="user-name"></span>?</h2>
+
+            <div class="wheel-container">
+                <div class="wheel-pointer">▼</div>
+                <canvas id="wheel" width="350" height="350"></canvas>
+            </div>
+
+            <button id="spin-btn" class="btn-primary btn-spin pulse">🎯 TAP TO SPIN!</button>
+            <p class="good-luck">Good luck!</p>
+        </div>
+    </div>
+
+    <!-- Prize Screen -->
+    <div id="prize-screen" class="screen">
+        <div class="container">
+            <div class="confetti-container" id="confetti-container"></div>
+
+            <div class="prize-announcement">
+                <h2 class="congrats">🎉 CONGRATULATIONS! 🎉</h2>
+                <div class="prize-display">
+                    <div class="prize-icon">🏆</div>
+                    <h3 class="prize-text">You won:</h3>
+                    <div class="prize-name" id="prize-name"></div>
+                </div>
+
+                <div class="redemption-box">
+                    <p class="redemption-text">Show this screen to Yellows staff to claim your prize!</p>
+                    <div class="prize-code" id="prize-code"></div>
+                </div>
+
+                <button class="btn-primary btn-show-staff">📱 Show to Staff</button>
+                <button class="btn-secondary btn-instagram" id="instagram-btn">
+                    📸 Follow Yellows on Instagram for an extra free topping!
+                </button>
+
+                <button class="btn-share" id="share-btn">
+                    💬 Share Your Win on Instagram Stories
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Redemption Portal (Hidden by default, accessed via /staff) -->
+    <div id="staff-screen" class="screen staff-portal">
+        <div class="container">
+            <h2>🔐 Yellows Staff Portal</h2>
+            <p>Scan or enter prize code to redeem</p>
+
+            <div class="staff-form">
+                <input type="text" id="redemption-code" placeholder="Enter Prize Code" class="staff-input">
+                <button id="redeem-btn" class="btn-primary">✓ Redeem Prize</button>
+            </div>
+
+            <div id="redemption-result" class="redemption-result"></div>
+
+            <a href="admin.html" class="admin-link">→ Admin Dashboard</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2C1810">
+    <title>Yellows Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="header-content">
+                <h1>🌭 Yellows Admin Dashboard</h1>
+                <div class="header-actions">
+                    <button id="refresh-btn" class="btn-refresh">🔄 Refresh</button>
+                    <button id="export-btn" class="btn-export">📊 Export Data</button>
+                    <a href="index.html?staff=true" class="btn-link">← Back to Staff Portal</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Real-time Stats -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value" id="total-users">0</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎉</div>
+                    <div class="stat-value" id="total-prizes">0</div>
+                    <div class="stat-label">Prizes Won</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="redeemed-prizes">0</div>
+                    <div class="stat-label">Prizes Redeemed</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📱</div>
+                    <div class="stat-value" id="qr-scans">0</div>
+                    <div class="stat-label">QR Scans</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📸</div>
+                    <div class="stat-value" id="instagram-follows">0</div>
+                    <div class="stat-label">Instagram Follows</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-value" id="social-shares">0</div>
+                    <div class="stat-label">Social Shares</div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="card">
+                    <h2 class="card-title">Prize Distribution</h2>
+                    <div id="prize-chart" class="chart"></div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Scans Over Time</h2>
+                    <div id="scans-chart" class="chart"></div>
+                </div>
+            </section>
+
+            <!-- Prize Configuration -->
+            <section class="prize-config-section">
+                <div class="card">
+                    <h2 class="card-title">Prize Configuration</h2>
+                    <p class="card-subtitle">Update prizes dynamically without reprinting posters</p>
+
+                    <div id="prizes-list" class="prizes-list"></div>
+
+                    <button id="add-prize-btn" class="btn-add">+ Add New Prize</button>
+                </div>
+            </section>
+
+            <!-- User Database -->
+            <section class="users-section">
+                <div class="card">
+                    <h2 class="card-title">User Database</h2>
+                    <div class="table-actions">
+                        <input type="text" id="search-users" placeholder="Search users..." class="search-input">
+                        <select id="filter-redeemed" class="filter-select">
+                            <option value="all">All Users</option>
+                            <option value="redeemed">Redeemed Only</option>
+                            <option value="pending">Pending Redemption</option>
+                        </select>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="users-table" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Prize</th>
+                                    <th>Code</th>
+                                    <th>Won At</th>
+                                    <th>Status</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics -->
+            <section class="analytics-section">
+                <div class="card">
+                    <h2 class="card-title">Campaign Analytics</h2>
+
+                    <div class="analytics-grid">
+                        <div class="analytics-item">
+                            <h3>Redemption Rate</h3>
+                            <div class="progress-bar">
+                                <div id="redemption-progress" class="progress-fill"></div>
+                            </div>
+                            <p id="redemption-rate">0%</p>
+                        </div>
+
+                        <div class="analytics-item">
+                            <h3>Top Locations</h3>
+                            <ul id="top-locations" class="list"></ul>
+                        </div>
+
+                        <div class="analytics-item">
+                            <h3>Peak Hours</h3>
+                            <ul id="peak-hours" class="list"></ul>
+                        </div>
+
+                        <div class="analytics-item">
+                            <h3>Device Breakdown</h3>
+                            <ul id="device-breakdown" class="list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geolocation Map -->
+            <section class="map-section">
+                <div class="card">
+                    <h2 class="card-title">Scan Locations</h2>
+                    <div id="map-container" class="map-container">
+                        <p class="map-placeholder">Map visualization would appear here with geolocation data</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Prize Edit Modal -->
+    <div id="prize-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title">Edit Prize</h2>
+
+            <form id="prize-form">
+                <div class="form-group">
+                    <label>Prize Name</label>
+                    <input type="text" id="prize-name-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Prize Emoji</label>
+                    <input type="text" id="prize-emoji-input" maxlength="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Prize Color</label>
+                    <input type="color" id="prize-color-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Weight (probability)</label>
+                    <input type="number" id="prize-weight-input" min="1" max="100" value="1">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Prize</button>
+                    <button type="button" class="btn-secondary" id="cancel-prize-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

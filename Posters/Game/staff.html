@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2C1810">
+    <title>Yellows Staff Portal - Prize Redemption</title>
+    <link rel="stylesheet" href="staff.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="staff-portal">
+        <div class="header">
+            <div class="logo">🌭 YELLOWS</div>
+            <h1>Staff Portal</h1>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <h2>🔐 Prize Redemption</h2>
+                <p class="subtitle">Scan or enter prize code to redeem</p>
+
+                <div class="staff-form">
+                    <input
+                        type="text"
+                        id="redemption-code"
+                        placeholder="Enter Prize Code (e.g., YLW-ABC123)"
+                        class="staff-input"
+                        autocomplete="off"
+                        autofocus>
+                    <button id="redeem-btn" class="btn-primary">✓ Redeem Prize</button>
+                </div>
+
+                <div id="redemption-result" class="redemption-result"></div>
+
+                <div class="quick-stats">
+                    <h3>Today's Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" id="today-redeemed">0</div>
+                            <div class="stat-label">Redeemed Today</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-pending">0</div>
+                            <div class="stat-label">Pending</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-redemptions">
+                    <h3>Recent Redemptions</h3>
+                    <div id="recent-list" class="recent-list"></div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="admin.html" class="admin-link">🔧 Admin Dashboard</a>
+                <a href="game.html" class="customer-link">🎮 Customer View</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="staff.js"></script>
+</body>
+</html>

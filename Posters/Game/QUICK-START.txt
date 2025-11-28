@@ -1,0 +1,68 @@
+🌭 YELLOWS HOTDOG JACKPOT - QUICK START GUIDE
+================================================
+
+🚀 DEPLOY IN 5 MINUTES:
+
+1. Go to: https://www.netlify.com
+2. Sign up (free account)
+3. Drag your entire "Game" folder onto Netlify
+4. Copy the URL they give you (e.g., https://yellows-abc123.netlify.app)
+5. DONE! Your site is live!
+
+📱 CREATE QR CODES:
+
+1. Go to: https://www.qr-code-generator.com
+2. Paste your URL + /game.html
+   Example: https://yellows-abc123.netlify.app/game.html?loc=poster1
+3. Download QR code (PNG, high resolution)
+4. Add to your poster design
+
+🎯 YOUR URLS:
+
+Customer Game:    https://your-site.netlify.app/game.html
+Staff Portal:     https://your-site.netlify.app/staff.html
+Admin Dashboard:  https://your-site.netlify.app/admin.html
+
+✅ WHAT WORKS NOW:
+
+✓ Full spin-to-win game
+✓ Prize codes generation
+✓ Staff redemption system
+✓ Admin analytics
+✓ QR tracking
+✓ Instagram integration
+✓ Mobile responsive
+
+📊 STAFF INSTRUCTIONS:
+
+1. Open: staff.html on any device
+2. Customer shows prize code on their phone
+3. Type code into staff portal
+4. Click "Redeem Prize"
+5. Give customer their prize!
+
+💡 TIPS:
+
+- Test the game on your phone BEFORE printing posters
+- Create different QR codes for different locations (?loc=arndale, ?loc=instagram)
+- Check admin dashboard to see which posters perform best
+- Data saves automatically in browser
+- No backend needed to get started!
+
+🔧 OPTIONAL BACKEND SETUP:
+
+For email notifications and centralized database:
+- See DEPLOYMENT-GUIDE.md for full instructions
+- Use Railway.app or Render.com (both have free tiers)
+- Setup takes 15-20 minutes
+
+📞 NEED HELP?
+
+Read: DEPLOYMENT-GUIDE.md (complete step-by-step guide)
+Read: README.md (technical documentation)
+
+🎉 READY TO LAUNCH!
+
+The game is 100% functional right now. Just deploy, create QR codes, and go!
+
+Good luck with your campaign! 🌭🎰
